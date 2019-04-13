@@ -141,6 +141,7 @@ $( "#price-range" ).slider({
 
 $( "#width-range" ).slider({
   range: true,
+  values: [ 1000, 8000 ],
   step: 25,
   min: 1000,
   max: 8000,
