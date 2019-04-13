@@ -245,6 +245,25 @@ $("#square-feet-checkbox").change(function() {
 }, 200);
 });
 
+$("#price-checkbox").change(function() {
+  
+  if(!$("#price-checkbox").is(":checked"))
+  {
+  $( "#price-range" ).slider( "disable" );
+  }
+	else { 
+  $( "#price-range" ).slider( "enable" );
+  }
+	var owl = $('.owl-carousel');
+  owl.fadeTo(200,0);
+	setTimeout(function() {
+    $(owl).trigger('destroy.owl.carousel');
+    $(".homes__col-item").each(filterhomes);
+  	sliderChange();
+}, 200);
+});
+
+
 $("#prev-house").click(function(){
 	var owl = $('.owl-carousel');
   owl.trigger('prev.owl.carousel');
