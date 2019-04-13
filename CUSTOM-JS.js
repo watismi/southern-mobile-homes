@@ -117,7 +117,7 @@ $( "#price-range" ).slider({
             
             $(this).find('.ui-slider-handle').first().text(ui.values[0]);
             
-            if (maxValue >= 2000) {
+            if (maxValue >= 50000) {
             $(this).find('.ui-slider-handle').last().text(">" + maxValue);
             }
             else {
@@ -129,7 +129,7 @@ $( "#price-range" ).slider({
             var v2 =$(this).slider('values', 1);
             $(this).find('.ui-slider-handle').first().text(v1);
             
-            if (v2 >= 2000) {
+            if (v2 >= 50000) {
             $(this).find('.ui-slider-handle').last().text(">" + v2);
             }
             else {
