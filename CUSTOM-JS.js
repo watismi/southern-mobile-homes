@@ -1,6 +1,6 @@
 
 
-$('.range__title').click(function() {
+$('.filter__title').click(function() {
 	$(this).siblings().find("input[type=checkbox]").trigger('click');
 });
 
