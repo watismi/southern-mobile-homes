@@ -139,6 +139,61 @@ $( "#price-range" ).slider({
   }
 });
 
+$( "#width-range" ).slider({
+  range: true,
+  step: 25,
+  min: 1000,
+  max: 8000,
+  animate: "fast",
+  value: 1,
+  slide: function( event, ui ) {
+  					var maxValue = ui.values[1];
+            
+            $(this).find('.ui-slider-handle').first().text(ui.values[0]);
+            
+            if (maxValue >= 8000) {
+            $(this).find('.ui-slider-handle').last().text(">" + maxValue);
+            }
+            else {
+            $(this).find('.ui-slider-handle').last().text(maxValue);
+            }
+    },
+  create: function(event, ui) {
+            var v1 =$(this).slider('values', 0);
+            var v2 =$(this).slider('values', 1);
+            $(this).find('.ui-slider-handle').first().text(v1);
+            
+            if (v2 >= 8000) {
+            $(this).find('.ui-slider-handle').last().text(">" + v2);
+            }
+            else {
+            $(this).find('.ui-slider-handle').last().text(v2);
+            }          
+  }
+});
+
+$( "#year-range" ).slider({
+  range: true,
+  values: [ 1970, 2019 ],
+  step: 1,
+  min: 1970,
+  max: 2019,
+  animate: "fast",
+  value: 1,
+  slide: function( event, ui ) {
+  					var maxValue = ui.values[1];
+            
+            $(this).find('.ui-slider-handle').first().text(ui.values[0]);
+            $(this).find('.ui-slider-handle').last().text(maxValue);
+    },
+  create: function(event, ui) {
+            var v1 =$(this).slider('values', 0);
+            var v2 =$(this).slider('values', 1);
+            $(this).find('.ui-slider-handle').first().text(v1);
+            $(this).find('.ui-slider-handle').last().text(v2);       
+  }
+});
+
 
 
 var owl = $('.owl-carousel');
