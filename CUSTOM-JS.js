@@ -104,6 +104,40 @@ $("#bathrooms-next").click(function(){var maxValue=$("#bathroom-range").slider("
   }
 });
 
+$( "#price-feet-range" ).slider({
+  range: true,
+  values: [ 1000, 50000 ],
+  step: 500,
+  min: 1000,
+  max: 50000,
+  animate: "fast",
+  value: 1,
+  slide: function( event, ui ) {
+  					var maxValue = ui.values[1];
+            
+            $(this).find('.ui-slider-handle').first().text(ui.values[0]);
+            
+            if (maxValue >= 2000) {
+            $(this).find('.ui-slider-handle').last().text(">" + maxValue);
+            }
+            else {
+            $(this).find('.ui-slider-handle').last().text(maxValue);
+            }
+    },
+  create: function(event, ui) {
+            var v1 =$(this).slider('values', 0);
+            var v2 =$(this).slider('values', 1);
+            $(this).find('.ui-slider-handle').first().text(v1);
+            
+            if (v2 >= 2000) {
+            $(this).find('.ui-slider-handle').last().text(">" + v2);
+            }
+            else {
+            $(this).find('.ui-slider-handle').last().text(v2);
+            }          
+  }
+});
+
 
 
 var owl = $('.owl-carousel');
