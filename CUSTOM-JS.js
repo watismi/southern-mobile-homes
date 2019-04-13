@@ -1,8 +1,9 @@
 
 
 $('.filter__title').click(function() {
-	$(this).siblings().find("input[type=checkbox]").trigger('click');
+	$(this).siblings().find("input[type=checkbox], input[type=radio]").trigger('click');
 });
+
 
 
 
