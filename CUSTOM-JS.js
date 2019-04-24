@@ -340,6 +340,129 @@ $("#state-checkbox").change(function() {
 });
 
 
+$("#wide-checkbox").change(function() {
+  
+  if(!$("#wide-checkbox").is(":checked"))
+  {
+  $('input[type="radio"][name="single-double"]').prop('disabled', true);
+  }
+	else { 
+  $('input[type="radio"][name="single-double"]').prop('disabled', false);
+  }
+	var owl = $('.owl-carousel');
+  owl.fadeTo(200,0);
+	setTimeout(function() {
+    $(owl).trigger('destroy.owl.carousel');
+    $(".homes__col-item").each(filterhomes);
+  	sliderChange();
+}, 200);
+});
+
+
+
+$("#width-checkbox").change(function() {
+  
+  if(!$("#width-checkbox").is(":checked"))
+  {
+  $( "#width-range" ).slider( "disable" );
+  }
+	else { 
+  $( "#width-range" ).slider( "enable" );
+  }
+	var owl = $('.owl-carousel');
+  owl.fadeTo(200,0);
+	setTimeout(function() {
+    $(owl).trigger('destroy.owl.carousel');
+    $(".homes__col-item").each(filterhomes);
+  	sliderChange();
+}, 200);
+});
+
+
+
+$("#place-checkbox").change(function() {
+  
+  if(!$("#place-checkbox").is(":checked"))
+  {
+  $('input[type="radio"][name="place"]').prop('disabled', true);
+  }
+	else { 
+  $('input[type="radio"][name="place"]').prop('disabled', false);
+  }
+	var owl = $('.owl-carousel');
+  owl.fadeTo(200,0);
+	setTimeout(function() {
+    $(owl).trigger('destroy.owl.carousel');
+    $(".homes__col-item").each(filterhomes);
+  	sliderChange();
+}, 200);
+});
+
+
+
+$("#deal-checkbox").change(function() {
+  
+  if(!$("#deal-checkbox").is(":checked"))
+  {
+  $('input[type="radio"][name="rent-sale"]').prop('disabled', true);
+  }
+	else { 
+  $('input[type="radio"][name="rent-sale"]').prop('disabled', false);
+  }
+	var owl = $('.owl-carousel');
+  owl.fadeTo(200,0);
+	setTimeout(function() {
+    $(owl).trigger('destroy.owl.carousel');
+    $(".homes__col-item").each(filterhomes);
+  	sliderChange();
+}, 200);
+});
+
+
+
+$("#year-checkbox").change(function() {
+  
+  if(!$("#year-checkbox").is(":checked"))
+  {
+  $( "#year-range" ).slider( "disable" );
+  }
+	else { 
+  $( "#year-range" ).slider( "enable" );
+  }
+	var owl = $('.owl-carousel');
+  owl.fadeTo(200,0);
+	setTimeout(function() {
+    $(owl).trigger('destroy.owl.carousel');
+    $(".homes__col-item").each(filterhomes);
+  	sliderChange();
+}, 200);
+});
+
+
+
+$("#type-checkbox").change(function() {
+  
+  if(!$("#type-checkbox").is(":checked"))
+  {
+  $('input[type="radio"][name="land-lots"]').prop('disabled', true);
+  }
+	else { 
+  $('input[type="radio"][name="land-lots"]').prop('disabled', false);
+  }
+	var owl = $('.owl-carousel');
+  owl.fadeTo(200,0);
+	setTimeout(function() {
+    $(owl).trigger('destroy.owl.carousel');
+    $(".homes__col-item").each(filterhomes);
+  	sliderChange();
+}, 200);
+});
+
+
+
+
+
+
 $("#prev-house").click(function(){
 	var owl = $('.owl-carousel');
   owl.trigger('prev.owl.carousel');
