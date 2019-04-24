@@ -321,6 +321,25 @@ $("#price-checkbox").change(function() {
 });
 
 
+$("#state-checkbox").change(function() {
+  
+  if(!$("#state-checkbox").is(":checked"))
+  {
+  $('input[type="radio"][name="new-used"]').prop('disabled', true);;
+  }
+	else { 
+  $('input[type="radio"][name="new-used"]').prop('disabled', false);
+  }
+	var owl = $('.owl-carousel');
+  owl.fadeTo(200,0);
+	setTimeout(function() {
+    $(owl).trigger('destroy.owl.carousel');
+    $(".homes__col-item").each(filterhomes);
+  	sliderChange();
+}, 200);
+});
+
+
 $("#prev-house").click(function(){
 	var owl = $('.owl-carousel');
   owl.trigger('prev.owl.carousel');
