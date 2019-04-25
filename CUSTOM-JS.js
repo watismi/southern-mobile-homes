@@ -19,19 +19,6 @@ $( "#bedroom-range, #bathroom-range, #square-feet-range" )
 } );
 
 
-
-//OC DDEFAULTS
-var oc=$('.owl-carousel');var ocOptions=oc.data('carousel-options');var ocdefaults={items:3,rewind:true,mouseDrag:true,touchDrag:true,pullDrag:true,freeDrag:false,nav:false,dots:false,autoplay:false,autoplayHoverPause:true,navContainer:false}; 
-//----OC DEFAULTS END-------
-
-//-------FILTER HOMES FUNCTION---------
-function filterhomes(){var owl=$('.owl-carousel');var hidden=$('#hiddenHomes');var bedroomDisabled=$("#bedroom-range").slider("option","disabled");var bedroomNumber= +($(this).find('.bedroomsmarker').text());var bedroomNumberFilter=$("#bedroom-range").slider("option","value");var bathroomDisabled=$("#bathroom-range").slider("option","disabled");var bathroomNumber= +($(this).find('.bathroomsmarker').text());var bathroomNumberFilter=$("#bathroom-range").slider("option","value");var squareFeetDisabled=$("#square-feet-range").slider("option","disabled");var squareFeet= +($(this).find('.squarefeetmarker').text());var squareFeetFilterMin=$("#square-feet-range").slider("values",0);var squareFeetFilterMax=$("#square-feet-range").slider("values",1);if((bedroomNumber==bedroomNumberFilter||bedroomDisabled)&&(bathroomNumber==bathroomNumberFilter||bathroomDisabled)&&(squareFeet>=squareFeetFilterMin||squareFeetDisabled)&&((squareFeet<=squareFeetFilterMax)||(squareFeet>=2000&&squareFeetFilterMax==2000)||(squareFeetDisabled))){$(this).appendTo(owl)}else{$(this).appendTo(hidden)}}
-//END OF FILTER HOMES FUNCTION
-
-//Slider Change Function
-function sliderChange(){var owl=$('.owl-carousel');var owlItems=owl.find('.homes__col-item');var noHouse=$('.houses-no-filter');var nav=$('.houses__nav-wrapper');if(owl.is(':empty')){nav.fadeOut(200,function(){noHouse.fadeIn(200)})}else{owl.owlCarousel($.extend(ocdefaults,ocOptions));noHouse.fadeOut(200,function(){$(owl).fadeTo(200,1);if(owlItems.length>3){nav.fadeIn(200)}else{nav.fadeOut(200)}})}}
-//Slider Change Function End
-
 // FILTER DEFAULTS BEGIN--------------------------------------------	
   $( "#bedroom-range" ).slider({
   max: 5,
@@ -194,49 +181,7 @@ $( "#year-range" ).slider({
             $(this).find('.ui-slider-handle').last().text(v2);       
   }
 });
-
-
-
-var owl = $('.owl-carousel');
-$(owl).show();
-$(".homes__col-item").each(filterhomes);
-$(sliderChange());
-
 // FILTER DEFAULTS END--------------------------------------------
-
-
-$( "#bedroom-range" ).on( "slidechange", function( event, ui ) {
-
-	var owl = $('.owl-carousel');
-  owl.fadeTo(200,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-},200);
-  
-} );
-
-$( "#bathroom-range" ).on( "slidechange", function( event, ui ) {
-	var owl = $('.owl-carousel');
-  owl.fadeTo(300,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-}, 200);
-} );
-
-
-$( "#square-feet-range" ).on( "slidechange", function( event, ui ) {
-	var owl = $('.owl-carousel');
-  owl.fadeTo(200,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-}, 200);
-} );
 
 //CHECKBOXES FUNCTIONALITY
 
@@ -246,19 +191,12 @@ $("#bedroom-checkbox").change(function() {
   {
   $( "#bedroom-range" ).slider( "disable" );
   }
-	else {
+  else {
   
   $( "#bedroom-range" ).slider( "enable" );
   
   }
   
-  var owl = $('.owl-carousel');
-  owl.fadeTo(200,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-}, 200);
 });
 
 
@@ -268,19 +206,9 @@ $("#bathroom-checkbox").change(function() {
   {
   $( "#bathroom-range" ).slider( "disable" );
   }
-	else {
-  
+  else {
   $( "#bathroom-range" ).slider( "enable" );
-  
   }
-  
-	var owl = $('.owl-carousel');
-  owl.fadeTo(200,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-}, 200);
   
 });
 
@@ -293,13 +221,7 @@ $("#square-feet-checkbox").change(function() {
 	else { 
   $( "#square-feet-range" ).slider( "enable" );
   }
-	var owl = $('.owl-carousel');
-  owl.fadeTo(200,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-}, 200);
+	
 });
 
 $("#price-checkbox").change(function() {
@@ -311,13 +233,7 @@ $("#price-checkbox").change(function() {
 	else { 
   $( "#price-range" ).slider( "enable" );
   }
-	var owl = $('.owl-carousel');
-  owl.fadeTo(200,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-}, 200);
+
 });
 
 
@@ -330,13 +246,7 @@ $("#state-checkbox").change(function() {
 	else { 
   $('input[type="radio"][name="new-used"]').prop('disabled', false);
   }
-	var owl = $('.owl-carousel');
-  owl.fadeTo(200,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-}, 200);
+
 });
 
 
@@ -349,13 +259,7 @@ $("#wide-checkbox").change(function() {
 	else { 
   $('input[type="radio"][name="single-double"]').prop('disabled', false);
   }
-	var owl = $('.owl-carousel');
-  owl.fadeTo(200,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-}, 200);
+
 });
 
 
@@ -369,13 +273,7 @@ $("#width-checkbox").change(function() {
 	else { 
   $( "#width-range" ).slider( "enable" );
   }
-	var owl = $('.owl-carousel');
-  owl.fadeTo(200,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-}, 200);
+
 });
 
 
@@ -389,13 +287,7 @@ $("#place-checkbox").change(function() {
 	else { 
   $('input[type="radio"][name="place"]').prop('disabled', false);
   }
-	var owl = $('.owl-carousel');
-  owl.fadeTo(200,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-}, 200);
+
 });
 
 
@@ -409,13 +301,7 @@ $("#deal-checkbox").change(function() {
 	else { 
   $('input[type="radio"][name="rent-sale"]').prop('disabled', false);
   }
-	var owl = $('.owl-carousel');
-  owl.fadeTo(200,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-}, 200);
+
 });
 
 
@@ -429,13 +315,7 @@ $("#year-checkbox").change(function() {
 	else { 
   $( "#year-range" ).slider( "enable" );
   }
-	var owl = $('.owl-carousel');
-  owl.fadeTo(200,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-}, 200);
+
 });
 
 
@@ -449,13 +329,7 @@ $("#type-checkbox").change(function() {
 	else { 
   $('input[type="radio"][name="land-lots"]').prop('disabled', false);
   }
-	var owl = $('.owl-carousel');
-  owl.fadeTo(200,0);
-	setTimeout(function() {
-    $(owl).trigger('destroy.owl.carousel');
-    $(".homes__col-item").each(filterhomes);
-  	sliderChange();
-}, 200);
+
 });
 
 
