@@ -107,7 +107,7 @@ $("#bathrooms-next").click(function(){var maxValue=$("#bathroom-range").slider("
 
 $( "#price-range" ).slider({
   range: true,
-  values: [ 1000, 50000 ],
+  values: [ 30000, 75000 ],
   step: 500,
   min: 30000,
   max: 75000,
