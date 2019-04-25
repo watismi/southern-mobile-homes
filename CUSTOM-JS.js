@@ -109,8 +109,8 @@ $( "#price-range" ).slider({
   range: true,
   values: [ 1000, 50000 ],
   step: 500,
-  min: 1000,
-  max: 50000,
+  min: 30000,
+  max: 75000,
   animate: "fast",
   value: 1,
   slide: function( event, ui ) {
@@ -118,7 +118,7 @@ $( "#price-range" ).slider({
             
             $(this).find('.ui-slider-handle').first().text(ui.values[0]);
             
-            if (maxValue >= 50000) {
+            if (maxValue >= 75000) {
             $(this).find('.ui-slider-handle').last().text(">" + maxValue);
             }
             else {
@@ -130,7 +130,7 @@ $( "#price-range" ).slider({
             var v2 =$(this).slider('values', 1);
             $(this).find('.ui-slider-handle').first().text(v1);
             
-            if (v2 >= 50000) {
+            if (v2 >= 75000) {
             $(this).find('.ui-slider-handle').last().text(">" + v2);
             }
             else {
