@@ -333,16 +333,3 @@ $("#type-checkbox").change(function() {
 });
 
 
-
-
-
-
-$("#prev-house").click(function(){
-	var owl = $('.owl-carousel');
-  owl.trigger('prev.owl.carousel');
-})
-
-$("#next-house").click(function(){
-	var owl = $('.owl-carousel');
-  owl.trigger("next.owl.carousel");
-})
