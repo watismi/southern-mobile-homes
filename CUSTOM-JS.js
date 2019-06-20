@@ -62,7 +62,7 @@ $("#bathrooms-next").click(function(){var maxValue=$("#bathroom-range").slider("
 $( "#price-range" ).slider({
   range: true,
   values: [ 0, 150000 ],
-  step: 500,
+  step: 100,
   min: 0,
   max: 150000,
   animate: "fast",
@@ -179,18 +179,6 @@ $("#bathroom-checkbox").change(function() {
   
 });
 
-$("#square-feet-checkbox").change(function() {
-  
-  if(!$("#square-feet-checkbox").is(":checked"))
-  {
-  $( "#square-feet-range" ).slider( "disable" );
-  }
-	else { 
-  $( "#square-feet-range" ).slider( "enable" );
-  }
-	
-});
-
 $("#price-checkbox").change(function() {
   
   if(!$("#price-checkbox").is(":checked"))
@@ -244,21 +232,6 @@ $("#width-checkbox").change(function() {
 });
 
 
-
-$("#place-checkbox").change(function() {
-  
-  if(!$("#place-checkbox").is(":checked"))
-  {
-  $('input[type="radio"][name="place"]').prop('disabled', true);
-  }
-	else { 
-  $('input[type="radio"][name="place"]').prop('disabled', false);
-  }
-
-});
-
-
-
 $("#deal-checkbox").change(function() {
   
   if(!$("#deal-checkbox").is(":checked"))
@@ -285,18 +258,5 @@ $("#year-checkbox").change(function() {
 
 });
 
-
-
-$("#type-checkbox").change(function() {
-  
-  if(!$("#type-checkbox").is(":checked"))
-  {
-  $('input[type="radio"][name="land-lots"]').prop('disabled', true);
-  }
-	else { 
-  $('input[type="radio"][name="land-lots"]').prop('disabled', false);
-  }
-
-});
 
 
