@@ -41,7 +41,7 @@ $("#bedrooms-next").click(function(){var e=$("#bedroom-range").slider("option","
 
 
   $( "#bathroom-range" ).slider({
-  max: 5,
+  max: 4,
   min: 1,
   animate: "fast",
   value: 1,
@@ -58,46 +58,13 @@ $("#bedrooms-next").click(function(){var e=$("#bedroom-range").slider("option","
 // ARROWS FUNCTIONALITY
 $("#bathrooms-next").click(function(){var maxValue=$("#bathroom-range").slider("option","max");var value=$("#bathroom-range").slider("option","value");var nextValue=value+1;if(nextValue<=maxValue){$("#bathroom-range").slider("value",nextValue);$("#bathroom-range").find('.ui-slider-handle').text(nextValue)}});$("#bathrooms-prev").click(function(){var minValue=$("#bathroom-range").slider("option","min");var value=$("#bathroom-range").slider("option","value");var prevValue=value-1;if(prevValue>=minValue){$("#bathroom-range").slider("value",prevValue);$("#bathroom-range").find('.ui-slider-handle').text(prevValue)}});
 //ARROWS FUNCTIONALITY END
-  $( "#square-feet-range" ).slider({
-  range: true,
-  values: [ 700, 2000 ],
-  step: 25,
-  min: 700,
-  max: 2000,
-  animate: "fast",
-  value: 1,
-  slide: function( event, ui ) {
-  					var maxValue = ui.values[1];
-            
-            $(this).find('.ui-slider-handle').first().text(ui.values[0]);
-            
-            if (maxValue >= 2000) {
-            $(this).find('.ui-slider-handle').last().text(">" + maxValue);
-            }
-            else {
-            $(this).find('.ui-slider-handle').last().text(maxValue);
-            }
-    },
-  create: function(event, ui) {
-            var v1 =$(this).slider('values', 0);
-            var v2 =$(this).slider('values', 1);
-            $(this).find('.ui-slider-handle').first().text(v1);
-            
-            if (v2 >= 2000) {
-            $(this).find('.ui-slider-handle').last().text(">" + v2);
-            }
-            else {
-            $(this).find('.ui-slider-handle').last().text(v2);
-            }          
-  }
-});
 
 $( "#price-range" ).slider({
   range: true,
-  values: [ 30000, 75000 ],
+  values: [ 0, 150000 ],
   step: 500,
-  min: 30000,
-  max: 75000,
+  min: 0,
+  max: 150000,
   animate: "fast",
   value: 1,
   slide: function( event, ui ) {
@@ -105,11 +72,11 @@ $( "#price-range" ).slider({
             
             $(this).find('.ui-slider-handle').first().text(ui.values[0]);
             
-            if (maxValue >= 75000) {
-            $(this).find('.ui-slider-handle').last().text(">" + maxValue);
+            if (maxValue >= 150000) {
+            $(this).find('.ui-slider-handle').last().text("$" + maxValue + "+");
             }
             else {
-            $(this).find('.ui-slider-handle').last().text(maxValue);
+            $(this).find('.ui-slider-handle').last().text("$" + maxValue);
             }
     },
   create: function(event, ui) {
@@ -117,11 +84,11 @@ $( "#price-range" ).slider({
             var v2 =$(this).slider('values', 1);
             $(this).find('.ui-slider-handle').first().text(v1);
             
-            if (v2 >= 75000) {
-            $(this).find('.ui-slider-handle').last().text(">" + v2);
+            if (v2 >= 150000) {
+            $(this).find('.ui-slider-handle').last().text("$" + v2 + "+");
             }
             else {
-            $(this).find('.ui-slider-handle').last().text(v2);
+            $(this).find('.ui-slider-handle').last().text("$" + v2);
             }          
   }
 });
