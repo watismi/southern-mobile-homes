@@ -208,10 +208,10 @@ $("#state-checkbox").change(function() {
   
   if(!$("#state-checkbox").is(":checked"))
   {
-  $('input[type="radio"][name="new-used"]').prop('disabled', true);
+  $('input[type="radio"][name="state"]').prop('disabled', true);
   }
 	else { 
-  $('input[type="radio"][name="new-used"]').prop('disabled', false);
+  $('input[type="radio"][name="state"]').prop('disabled', false);
   }
 
 });
