@@ -192,6 +192,18 @@ $("#price-checkbox").change(function() {
 });
 
 
+$("#sections-checkbox").change(function() {
+  
+  if(!$("#sections-checkbox").is(":checked"))
+  {
+  $('input[type="radio"][name="sections"]').prop('disabled', true);
+  }
+  else { 
+  $('input[type="radio"][name="sections"]').prop('disabled', false);
+  }
+
+});
+
 $("#state-checkbox").change(function() {
   
   if(!$("#state-checkbox").is(":checked"))
@@ -205,17 +217,6 @@ $("#state-checkbox").change(function() {
 });
 
 
-$("#wide-checkbox").change(function() {
-  
-  if(!$("#wide-checkbox").is(":checked"))
-  {
-  $('input[type="radio"][name="single-double"]').prop('disabled', true);
-  }
-	else { 
-  $('input[type="radio"][name="single-double"]').prop('disabled', false);
-  }
-
-});
 
 
 
