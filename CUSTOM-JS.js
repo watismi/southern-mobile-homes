@@ -131,7 +131,7 @@ $( "#year-range" ).slider({
   range: true,
   values: [ 1970, 2019 ],
   step: 1,
-  min: 1970,
+  min: 1980,
   max: 2019,
   animate: "fast",
   value: 1,
