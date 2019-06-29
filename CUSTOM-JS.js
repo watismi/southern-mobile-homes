@@ -122,7 +122,7 @@ $( "#year-range" ).slider({
   range: true,
   values: [ 1970, 2019 ],
   step: 1,
-  min: 1980,
+  min: 1970,
   max: 2019,
   animate: "fast",
   value: 1,
@@ -130,13 +130,19 @@ $( "#year-range" ).slider({
   					var maxValue = ui.values[1];
             
             $(this).find('.ui-slider-handle').first().text(ui.values[0]);
+	  
+	    if (maxValue == 2019) {
+            $(this).find('.ui-slider-handle').last().text("Brand New");
+            }
+            else {
             $(this).find('.ui-slider-handle').last().text(maxValue);
+            }
     },
   create: function(event, ui) {
             var v1 =$(this).slider('values', 0);
             var v2 =$(this).slider('values', 1);
             $(this).find('.ui-slider-handle').first().text(v1);
-            $(this).find('.ui-slider-handle').last().text(v2);       
+            $(this).find('.ui-slider-handle').last().text('Brand New');       
   }
 });
 // FILTER DEFAULTS END--------------------------------------------
