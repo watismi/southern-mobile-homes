@@ -104,16 +104,16 @@ $( "#width-range" ).slider({
   slide: function( event, ui ) {
   	    var maxValue = ui.values[1];
             
-            $(this).find('.ui-slider-handle').first().text(ui.values[0] + "'");
+            $(this).find('.ui-slider-handle').first().text(ui.values[0] + "’");
             
-            $(this).find('.ui-slider-handle').last().text(maxValue + "'");
+            $(this).find('.ui-slider-handle').last().text(maxValue + "’");
             
     },
   create: function(event, ui) {
             var v1 =$(this).slider('values', 0);
             var v2 =$(this).slider('values', 1);
-            $(this).find('.ui-slider-handle').first().text(v1 + "'");
-            $(this).find('.ui-slider-handle').last().text(v2 + "'");
+            $(this).find('.ui-slider-handle').first().text(v1 + "’");
+            $(this).find('.ui-slider-handle').last().text(v2 + "’");
             
   }
 });
