@@ -95,35 +95,26 @@ $( "#price-range" ).slider({
 
 $( "#width-range" ).slider({
   range: true,
-  values: [ 1000, 8000 ],
-  step: 25,
-  min: 1000,
-  max: 8000,
+  values: [ 14, 36 ],
+  step: 1,
+  min: 14,
+  max: 36,
   animate: "fast",
   value: 1,
   slide: function( event, ui ) {
-  					var maxValue = ui.values[1];
+  	    var maxValue = ui.values[1];
             
-            $(this).find('.ui-slider-handle').first().text(ui.values[0]);
+            $(this).find('.ui-slider-handle').first().text(ui.values[0] + "'");
             
-            if (maxValue >= 8000) {
-            $(this).find('.ui-slider-handle').last().text(">" + maxValue);
-            }
-            else {
-            $(this).find('.ui-slider-handle').last().text(maxValue);
-            }
+            $(this).find('.ui-slider-handle').last().text(maxValue + "'");
+            
     },
   create: function(event, ui) {
             var v1 =$(this).slider('values', 0);
             var v2 =$(this).slider('values', 1);
-            $(this).find('.ui-slider-handle').first().text(v1);
+            $(this).find('.ui-slider-handle').first().text(v1 + "'");
+            $(this).find('.ui-slider-handle').last().text(v2 + "'");
             
-            if (v2 >= 8000) {
-            $(this).find('.ui-slider-handle').last().text(">" + v2);
-            }
-            else {
-            $(this).find('.ui-slider-handle').last().text(v2);
-            }          
   }
 });
 
