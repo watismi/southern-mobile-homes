@@ -136,10 +136,16 @@ $( "#year-range" ).slider({
             
     },
   create: function(event, ui) {
-            var v1 =$(this).slider('values', 0);
-            var v2 =$(this).slider('values', 1);
-            $(this).find('.ui-slider-handle').first().text(v1);
-            $(this).find('.ui-slider-handle').last().text('Brand New');       
+            var maxValue = ui.values[1];
+	    minValue = ui.values[0];
+            if (minValue == 1970) {
+            $(this).find('.ui-slider-handle').first().text(">" + ui.values[0]);
+	    }    
+	    else {
+            $(this).find('.ui-slider-handle').first().text(minValue);
+            }
+	    
+            $(this).find('.ui-slider-handle').last().text(maxValue);     
   }
 });
 // FILTER DEFAULTS END--------------------------------------------
