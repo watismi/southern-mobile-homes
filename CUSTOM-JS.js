@@ -21,11 +21,11 @@ $( "#bedroom-range, #bathroom-range, #square-feet-range" )
   value: 1,
   slide: function( event, ui ) {
             $( "#amount" ).val( ui.value );
-            $(this).find('.ui-slider-handle').text(ui.value);
+            $(this).find('.ui-slider-handle').text(ui.value +"+");
   },
   create: function(event, ui) {
             var v=$(this).slider('value');
-            $(this).find('.ui-slider-handle').text(v);
+            $(this).find('.ui-slider-handle').text(v +"+");
   } 
 });
 
@@ -41,11 +41,11 @@ $("#bedrooms-next").click(function(){var e=$("#bedroom-range").slider("option","
   value: 1,
   slide: function( event, ui ) {
             $( "#amount" ).val( ui.value );
-            $(this).find('.ui-slider-handle').text(ui.value);
+            $(this).find('.ui-slider-handle').text(ui.value +"+");
   },
   create: function(event, ui) {
             var v=$(this).slider('value');
-            $(this).find('.ui-slider-handle').text(v);
+            $(this).find('.ui-slider-handle').text(v +"+");
   } 
 });
 
