@@ -125,13 +125,14 @@ $( "#year-range" ).slider({
 	    minValue = ui.values[0];
             if (minValue == 1970) {
             $(this).find('.ui-slider-handle').first().text(">" + ui.values[0]);
+	    }    
 	    else {
             $(this).find('.ui-slider-handle').first().text(minValue);
             }
 	    
             $(this).find('.ui-slider-handle').last().text(maxValue);
 		    
-            }
+            
             
     },
   create: function(event, ui) {
