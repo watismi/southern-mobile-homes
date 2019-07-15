@@ -124,7 +124,7 @@ $( "#year-range" ).slider({
   	var maxValue = ui.values[1];
 	    minValue = ui.values[0];
             if (minValue == 1970) {
-            $(this).find('.ui-slider-handle').first().text(">" + ui.values[0]);
+            $(this).find('.ui-slider-handle').first().text("<" + ui.values[0]);
 	    }    
 	    else {
             $(this).find('.ui-slider-handle').first().text(minValue);
@@ -136,10 +136,10 @@ $( "#year-range" ).slider({
             
     },
   create: function(event, ui) {
-            var maxValue = ui.values[1];
-	    minValue = ui.values[0];
+            var maxValue = ui.values[1],
+	    	minValue = ui.values[0];
             if (minValue == 1970) {
-            $(this).find('.ui-slider-handle').first().text(">" + ui.values[0]);
+            $(this).find('.ui-slider-handle').first().text("<" + ui.values[0]);
 	    }    
 	    else {
             $(this).find('.ui-slider-handle').first().text(minValue);
