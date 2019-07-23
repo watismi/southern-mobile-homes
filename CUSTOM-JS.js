@@ -23,6 +23,7 @@ $( "#bedroom-range, #bathroom-range, #square-feet-range" )
             $( "#amount" ).val( ui.value );
             $(this).find('.ui-slider-handle').text(ui.value +"+");
   },
+ 
   create: function(event, ui) {
             var v=$(this).slider('value');
             $(this).find('.ui-slider-handle').text(v +"+");
@@ -30,7 +31,7 @@ $( "#bedroom-range, #bathroom-range, #square-feet-range" )
 });
 
 // ARROWS FUNCTIONALITY
-$("#bedrooms-next").click(function(){var e=$("#bedroom-range").slider("option","max"),o=$("#bedroom-range").slider("option","value")+1;o<=e&&($("#bedroom-range").slider("value",o),$("#bedroom-range").find(".ui-slider-handle").text(o))}),$("#bedrooms-prev").click(function(){var e=$("#bedroom-range").slider("option","min"),o=$("#bedroom-range").slider("option","value")-1;e<=o&&($("#bedroom-range").slider("value",o),$("#bedroom-range").find(".ui-slider-handle").text(o))});
+$("#bedrooms-next").click(function(){var e=$("#bedroom-range").slider("option","max"),o=$("#bedroom-range").slider("option","value")+1;o<=e&&($("#bedroom-range").slider("value",o),$("#bedroom-range").find(".ui-slider-handle").text(o+"+"))}),$("#bedrooms-prev").click(function(){var e=$("#bedroom-range").slider("option","min"),o=$("#bedroom-range").slider("option","value")-1;e<=o&&($("#bedroom-range").slider("value",o),$("#bedroom-range").find(".ui-slider-handle").text(o+"+"))});
 //ARROWS FUNCTIONALITY END
 
 
