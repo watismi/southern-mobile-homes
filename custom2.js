@@ -56,35 +56,27 @@ $("#bathrooms-next").click(function(){var maxValue=$("#bathroom-range").slider("
 
 $( "#price-range" ).slider({
   range: true,
-  values: [ 0, 150000 ],
+  values: [ 0, 20000 ],
   step: 100,
   min: 0,
-  max: 150000,
+  max: 20000,
   animate: "fast",
   value: 1,
   slide: function( event, ui ) {
   					var maxValue = ui.values[1];
             
             $(this).find('.ui-slider-handle').first().text("$" + ui.values[0]);
-            
-            if (maxValue >= 150000) {
-            $(this).find('.ui-slider-handle').last().text("$" + maxValue + "+");
-            }
-            else {
+          
             $(this).find('.ui-slider-handle').last().text("$" + maxValue);
-            }
+        
     },
   create: function(event, ui) {
             var v1 =$(this).slider('values', 0);
             var v2 =$(this).slider('values', 1);
             $(this).find('.ui-slider-handle').first().text("$" + v1);
             
-            if (v2 >= 150000) {
-            $(this).find('.ui-slider-handle').last().text("$" + v2 + "+");
-            }
-            else {
             $(this).find('.ui-slider-handle').last().text("$" + v2);
-            }          
+                      
   }
 });
 
