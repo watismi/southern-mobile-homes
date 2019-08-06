@@ -133,10 +133,10 @@ $( "#year-range" ).slider({
 	    else {
             $(this).find('.ui-slider-handle').first().text(minValue);
             }
-	    $('#imnyear').val(ui.values[0]);
+	    $('#imnyear').val(minValue);
 	    
             $(this).find('.ui-slider-handle').last().text(maxValue);
-	    $('#imxyear').val(ui.values[1]);
+	    $('#imxyear').val(maxValue);
 		    
             
             
