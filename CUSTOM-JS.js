@@ -66,12 +66,15 @@ $( "#price-range" ).slider({
   					var maxValue = ui.values[1];
             
             $(this).find('.ui-slider-handle').first().text("$" + ui.values[0]);
+	    $('#imnprice').val(ui.values[0]);
             
             if (maxValue >= 150000) {
             $(this).find('.ui-slider-handle').last().text("$" + maxValue + "+");
+	    $('#imxprice').val(ui.values[1]);    
             }
             else {
             $(this).find('.ui-slider-handle').last().text("$" + maxValue);
+	    $('#imxprice').val(ui.values[1]) ; 
             }
     },
   create: function(event, ui) {
